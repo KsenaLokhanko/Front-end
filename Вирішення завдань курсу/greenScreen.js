@@ -1,4 +1,5 @@
-// write your code here
+//Даний код змінює зелений фон на передньому фото на зображення з іншого фото
+
 function greenScreen(fgImage, bgImage){
     var res = new SimpleImage(fgImage.getWidth(), fgImage.getHeight());
     
