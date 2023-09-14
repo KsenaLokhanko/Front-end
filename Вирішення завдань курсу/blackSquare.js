@@ -1,4 +1,6 @@
-function removeRed(nameImg){
+//Цей код створює чорний квадрат посередині зображення який закриває обличчя зображеної людини 
+
+function blackSquare(nameImg){
     var img = new SimpleImage(nameImg);
     for (var pix of img.values()){
         if (pix.getY() > 15 && pix.getY() <210){
