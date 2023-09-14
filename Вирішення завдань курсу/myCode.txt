@@ -1,0 +1,25 @@
+function changeRed(width, height) {
+    var picture = new SimpleImage(width, height);
+    var red = 0;
+    var green = 225;
+    var blue = 150;
+    for(var pix of picture.values()){
+        if(pix.getX() == 0){
+            red = 0;
+            green = 220;
+        }
+        pix.setRed(red);
+        pix.setGreen(green);
+        pix.setBlue(blue);
+        red+=1;
+        green -= 1;
+    }
+
+    // missing code
+
+    return picture;
+}
+
+var result = changeRed(256,200);
+print(result);
+
