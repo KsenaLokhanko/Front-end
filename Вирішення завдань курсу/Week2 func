@@ -1,0 +1,122 @@
+//Даний код змінює зелений фон на передньому фото на зображення з іншого фото
+function greenScreen(fgImage, bgImage){
+    var res = new SimpleImage(fgImage.getWidth(), fgImage.getHeight());
+    
+    for (var pix of fgImage.values()){
+        if(pix.getGreen() >= pix.getRed()+pix.getBlue()+5){
+            var bgPix = bgImage. getPixel(pix.getX(), pix.getY());
+            res.setPixel(pix.getX(), pix.getY(), bgPix);
+        } else {
+            res.setPixel(pix.getX(), pix.getY(), pix);
+        }
+    }
+    return res;
+}
+
+//Даний код створює градієнт від зеленого до червоного (зі значенням синього 150)
+function GreenToRed(width, height) {
+    var picture = new SimpleImage(width, height);
+    var red = 0;
+    var green = 225;
+    //додаю синій, бо так колір гарніший
+    var blue = 150;
+    for(var pix of picture.values()){
+        if(pix.getX() == 0){
+            red = 0;
+            green = 220;
+        }
+        pix.setRed(red);
+        pix.setGreen(green);
+        pix.setBlue(blue);
+        red+=1;
+        green -= 1;
+    }
+    return picture;
+}
+
+//Даний код додає на зображення чорну рамку шириною 10 пікселів
+function setBlack(pixel){
+    pixel.setRed(0);        
+    pixel.setGreen(0);        
+    pixel.setBlue(0);       
+}
+
+function addBorder(nameImage){
+    var img = new SimpleImage(nameImage);
+    var w = img.getWidth();
+    var h = img.getHeight();
+    for (var pix of img.values()){
+        if (pix.getY() < 10 || pix.getY() > h-10){
+            setBlack(pix);       
+        }
+        if (pix.getX() < 10 || pix.getX() > w-10){
+            setBlack(pix);       
+        } 
+    }
+    return img;
+}
+
+//Цей код створює чорний квадрат посередині зображення який закриває обличчя зображеної людини 
+function blackSquare(nameImg){
+    var img = new SimpleImage(nameImg);
+    for (var pix of img.values()){
+        if (pix.getY() > 15 && pix.getY() <210){
+            if (pix.getX() > 50 && pix.getX() < 200 ){
+            pix.setRed(0);        
+            pix.setGreen(0);        
+            pix.setBlue(0);        
+        }}
+    }
+    return img;
+}
+
+//Даний код змінює місцями червоне та зелене значення пікселя.
+function swapRedGreen(nameImg){
+    var img = new SimpleImage(nameImg);
+    for (var pix of img.values()){
+        if (pix.getRed()<250){
+            pix.setRed(255);
+            pix.setGreen(255);
+            pix.setBlue(0);
+        }
+    }
+    return img;
+}
+
+//Даний код змінює значення червоного у пікселях, де початкове значення менше 14
+function changeRedVal(nameImg, newR){
+    var img = new SimpleImage (nameImg);
+    for (var pixel of img.values()){
+        if (pixel.getRed() <14){
+        pixel.setRed(newR);}
+    }
+    return img;
+}
+
+//Даний код змінює місцями червоне та зелене значення пікселя.
+function swapRedGreen(nameImg){
+    var img = new SimpleImage(nameImg);
+    for (var pix of img.values()){
+       var r = pix.getRed();
+       var g = pix.getGreen();
+       pix.setRed(g);
+       pix.setGreen(r);
+    }
+    return img;
+}
+
+//Даний код змінює зображення, розміщуючи на ньому три вертикальні смуги: червону, зелену та синю.     
+function threeRowsH(nameImg){
+    var img = new SimpleImage(nameImg);
+    var w = img.getWidth();
+    for (var pix of img.values()){
+        if (pix.getX()<w/3){
+            pix.setRed(225);
+        } else if (pix.getX()<(2*w)/3){
+                pix.setGreen(225);
+        } else {
+                pix.setBlue(225);
+        }
+    }
+    return img;
+}
