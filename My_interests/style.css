@@ -1,0 +1,35 @@
+body {
+  background-color: #FFC0CB;
+}
+
+h1{
+  text-align: center;
+  
+  color: #FF6600;
+  background-color: AntiqueWhite; 
+  height: 45px;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+}
+
+tr th{
+   font-size: 20px;
+}
+
+.interestUl {
+  background-color: #FF3399;
+  color: 	#181818;
+}
+
+#danceVideo{
+ font-size: 18px;
+ text-alight: left;
+}
+
+ol ul{
+  font-style: italic;
+}
+
