@@ -41,17 +41,17 @@ function changeCanvaColG() {
 } 
 
 //Canvas Color Changer
-const canvas = document.getElementById("myCanvas");
-const colorInput = document.getElementById("colorInput");
-const ctx = canvas.getContext("2d");
-const slider = document.getElementById("slider");
-canvas.style.backgroundColor = colorInput.value;
-
 function changeBackgroundColor() {
-    canvas.style.backgroundColor = colorInput.value;
+  const canvas = document.getElementById("myCanvas");
+  const colorInput = document.getElementById("colorInput");
+  canvas.style.backgroundColor = colorInput.value;
 }
 
 function doSquare() {
+    const canvas = document.getElementById("myCanvas");
+    const colorInput = document.getElementById("colorInput");
+    const ctx = canvas.getContext("2d");
+    const slider = document.getElementById("slider");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const squareSize = parseInt(slider.value);
     ctx.fillStyle = colorInput.value;
