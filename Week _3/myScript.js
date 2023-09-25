@@ -62,40 +62,6 @@ function doSquare() {
     ctx.fillRect(secondSquareX, secondSquareY, squareSize, squareSize);
 }
 
-//Todo list
-function addTask() {
-    var input = document.getElementById("input");
-    var newTask = input.value;
-
-    if (newTask != "") {
-        var item = document.createElement("li");
-        item.innerHTML = '<input type="button" class="done" onclick="markDone(this.parentNode)"  value="&#x2713;" /> ' + '<input type="button" class="remove" onclick="remove(this.parentNode)" value="&#x2715;" /> ' + newTask; document.getElementById("tasks").appendChild(item);
-        input.value = "";
-        input.placeholder = "enter next task ...";
-    }
-}
-
-function markDone(item) {
-    item.className = 'finished';
-}
-
-function remove(item) {
-    if (item.classList.contains('finished')) {
-        item.remove();
-    }
-}
-
-function doAbout() {
-    var divAbout = document.getElementById("divabout");
-    divAbout.textContent = "Author is Lokhanko Kseniia";
-    divAbout.classList.add("aboutcolor");
-}
-
-function clearAbout() {
-    var divAbout = document.getElementById("divabout");
-    divAbout.textContent = "";
-}
-
 //Paint Your Own Picture
 var paintcanvas = document.getElementById("canvasPaint");
 var context = paintcanvas.getContext("2d");
@@ -151,4 +117,37 @@ function changeColor(newColor) {
 function resizeBrush(newSize) {
   radius = newSize;
   document.getElementById("sizeOutput").value = newSize;
+}
+
+function addTask() {
+    var input = document.getElementById("input");
+    var newTask = input.value;
+
+    if (newTask != "") {
+        var item = document.createElement("li");
+        item.innerHTML = '<input type="button" class="done" onclick="markDone(this.parentNode)"  value="&#x2713;" /> ' + '<input type="button" class="remove" onclick="remove(this.parentNode)" value="&#x2715;" /> ' + newTask; document.getElementById("tasks").appendChild(item);
+        input.value = "";
+        input.placeholder = "enter next task ...";
+    }
+}
+
+function markDone(item) {
+    item.className = 'finished';
+}
+
+function remove(item) {
+    if (item.classList.contains('finished')) {
+        item.remove();
+    }
+}
+
+function doAbout() {
+    var divAbout = document.getElementById("divabout");
+    divAbout.textContent = "Author is Lokhanko Kseniia";
+    divAbout.classList.add("aboutcolor");
+}
+
+function clearAbout() {
+    var divAbout = document.getElementById("divabout");
+    divAbout.textContent = "";
 }
