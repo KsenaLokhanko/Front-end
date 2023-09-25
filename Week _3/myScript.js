@@ -63,29 +63,32 @@ function doSquare() {
 }
 
 //Paint Your Own Picture
-var paintcanvas = document.getElementById("canvasPaint");
-var context = paintcanvas.getContext("2d");
 var color = 'black';
 var radius = 50;
 var isPainting = false;
 
 function setWidth(value) {
+  var paintcanvas = document.getElementById("canvasPaint");
   if (isNumeric(value)) {
     paintcanvas.width = parseInt(value);
   }
 }
 
 function setHeight(value) {
+  var paintcanvas = document.getElementById("canvasPaint");
   if (isNumeric(value)) {
     paintcanvas.height = parseInt(value);
   }
 }
 
 function clearCanvas() {
+  var paintcanvas = document.getElementById("canvasPaint");
+  var context = paintcanvas.getContext("2d");
   context.clearRect(0, 0, paintcanvas.width, paintcanvas.height);
 }
 
 function paintCircle(x, y) {
+  var context = paintcanvas.getContext("2d");
   context.beginPath();
   context.arc(x, y, radius, 0, Math.PI * 2, true);
   context.fillStyle = color;
