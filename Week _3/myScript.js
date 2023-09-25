@@ -63,10 +63,6 @@ function doSquare() {
 }
 
 //Paint Your Own Picture
-var color = 'black';
-var radius = 50;
-var isPainting = false;
-
 function setWidth(value) {
   var paintcanvas = document.getElementById("canvasPaint");
   if (isNumeric(value)) {
@@ -100,11 +96,11 @@ function isNumeric(value) {
 }
 
 function startPaint() {
-  isPainting = true;
+  var isPainting = true;
 }
 
 function endPaint() {
-  isPainting = false;
+  var isPainting = false;
 }
 
 function doPaint(x, y) {
@@ -114,11 +110,11 @@ function doPaint(x, y) {
 }
 
 function changeColor(newColor) {
-  color = newColor;
+  var color = newColor;
 }
 
 function resizeBrush(newSize) {
-  radius = newSize;
+  var radius = newSize;
   document.getElementById("sizeOutput").value = newSize;
 }
 
