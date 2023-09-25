@@ -94,13 +94,14 @@ function paintCircle(x, y) {
 function isNumeric(value) {
   return !isNaN(value);
 }
+var isPainting = false;
 
 function startPaint() {
-  var isPainting = true;
+  isPainting = true;
 }
 
 function endPaint() {
-  var isPainting = false;
+ isPainting = false;
 }
 
 function doPaint(x, y) {
