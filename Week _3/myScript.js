@@ -119,6 +119,7 @@ function resizeBrush(newSize) {
   document.getElementById("sizeOutput").value = newSize;
 }
 
+//TODO list
 function addTask() {
     var input = document.getElementById("input");
     var newTask = input.value;
