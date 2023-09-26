@@ -65,21 +65,21 @@
          <h1>Paint Your Own Picture</h1>
         <p>
           Set Width: 
-          <input type="text" onchange="setWidth(this.value)">
+          <input type="text" onchange="PaintApp.setWidth(this.value)">
 
           Set Height: 
-          <input type="text" onchange="setHeight(this.value)">
+          <input type="text" onchange="PaintApp.setHeight(this.value)">
         </p>
-        <canvas id="canvasPaint" width="500" height="500" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX, event.offsetY)" onmouseup="endPaint()"></canvas>
+        <canvas id="canvasPaint" width="500" height="500" onmousedown="startPaint()" onmousemove="PaintApp.doPaint(event.offsetX, event.offsetY)" onmouseup="endPaint()"></canvas>
         <p>
           Brush Color: 
-          <input type="color" value="#000" onchange="changeColor(this.value)">
+          <input type="color" value="#000" onchange="PaintApp.changeColor(this.value)">
           Brush Size: 
-          <input type="range" id="sizeInput" min="1" max="50" value="50" oninput="resizeBrush(this.value)">
+          <input type="range" id="sizeInput" min="1" max="50" value="50" oninput="PaintApp.resizeBrush(this.value)">
           <output id="sizeOutput">50</output>
         </p>
         <p>
-          <input type="button" id="clear" value="Clear Canvas" onclick="clearCanvas()">
+          <input type="button" id="clear" value="Clear Canvas" onclick="PaintApp.clearCanvas()">
         </p>
       </div>
     </div>
