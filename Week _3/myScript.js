@@ -63,61 +63,70 @@ function doSquare() {
 }
 
 //Paint Your Own Picture
-function setWidth(value) {
-  var paintcanvas = document.getElementById("canvasPaint");
-  if (isNumeric(value)) {
-    paintcanvas.width = parseInt(value);
+const PaintApp = {
+  canvas: document.getElementById("canvasPaint"),
+  context: null,
+  color: 'black',
+  radius: 50,
+  isPainting: false,
+
+  setWidth(value) {
+    if (this.isNumeric(value)) {
+      this.canvas.width = parseInt(value);
+    }
+  },
+
+  setHeight(value) {
+    if (this.isNumeric(value)) {
+      this.canvas.height = parseInt(value);
+    }
+  },
+
+  clearCanvas() {
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  },
+
+  paintCircle(x, y) {
+    this.context.beginPath();
+    this.context.arc(x, y, this.radius, 0, Math.PI * 2, true);
+    this.context.fillStyle = this.color;
+    this.context.fill();
+  },
+
+  isNumeric(value) {
+    return !isNaN(value);
+  },
+
+  startPaint() {
+    this.isPainting = true;
+  },
+
+  endPaint() {
+    this.isPainting = false;
+  },
+
+  doPaint(x, y) {
+    if (this.isPainting) {
+      this.paintCircle(x, y);
+    }
+  },
+
+  changeColor(newColor) {
+    this.color = newColor;
+  },
+
+  resizeBrush(newSize) {
+    this.radius = newSize;
+    document.getElementById("sizeOutput").value = newSize;
+  },
+
+  init() {
+    this.context = this.canvas.getContext("2d");
+    // Add event listeners or any other setup code here
   }
-}
+};
 
-function setHeight(value) {
-  var paintcanvas = document.getElementById("canvasPaint");
-  if (isNumeric(value)) {
-    paintcanvas.height = parseInt(value);
-  }
-}
-
-function clearCanvas() {
-  var paintcanvas = document.getElementById("canvasPaint");
-  var context = paintcanvas.getContext("2d");
-  context.clearRect(0, 0, paintcanvas.width, paintcanvas.height);
-}
-
-function paintCircle(x, y) {
-  var context = paintcanvas.getContext("2d");
-  context.beginPath();
-  context.arc(x, y, radius, 0, Math.PI * 2, true);
-  context.fillStyle = color;
-  context.fill();
-}
-
-function isNumeric(value) {
-  return !isNaN(value);
-}
-var isPainting = false;
-
-function startPaint() {
-  isPainting = true;
-}
-
-function endPaint() {
- isPainting = false;
-}
-
-function doPaint(x, y) {
-  if (isPainting) {
-    paintCircle(x, y);
-  }
-}
-
-function changeColor(newColor) {
-  var color = newColor;
-}
-
-function resizeBrush(newSize) {
-  var radius = newSize;
-  document.getElementById("sizeOutput").value = newSize;
-}
+PaintApp.init(); // Initialize the PaintApp object
 
 //TODO list
 function addTask() {
