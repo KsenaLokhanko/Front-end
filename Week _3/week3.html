@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 3 tasks</title>
+    <link rel="stylesheet" type="text/css" href="https://ksenalokhanko.github.io/Front-end/Week%20_3/styles.css"/>
+    <script src="https://ksenalokhanko.github.io/Front-end/Week%20_3/myScript.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Week 3 tasks</h1>
+    </header>
+    
+    <p id="descr">На цій сторінці знаходяться виконані завдання до тижня 3 з курсу “Programming Foundations with JavaScript, HTML and CSS” від Duke University.</p>
+    
+    <div class="grid-container">
+      <div class="grid-item" id="it1">
+        <div class="changeThing">
+        <h2 style="font-family: system-ui">Change Thing 1</h2>
+        <input type="button" value="Choice" onclick="doChoice()" id="but">
+        <input type="button" value="Clear" onclick="clearText()" id="butC">
+        <p id="demo"></p>
+        </div>
+        <div class="changeThing">
+        <h2 style="font-family: system-ui">Change Thing 2</h2>
+        <div id="d1">Hello</div>
+        <div id="d2">Word</div>
+        <input type="button" value="Change color" onclick="changeCol()" id="butCol">
+        <input type="button" value="Change text" onclick="changeText()" id="butT">
+        </div>    
+      </div>
+      <div class="grid-item" id="it2">
+        <canvas id="canvas1"></canvas>
+        <canvas id="canvas2"></canvas>
+        <br>
+        <input type="button" value="Change color to pink" onclick="changeCanvaColP()" id="butCanvaColP">
+        <input type="button" value="Change color to grey" onclick="changeCanvaColG()" id="butCanvaColG">
+      </div>
+      <div class="grid-item" id="it3">
+        <h1 id="myHeader">TO DO List</h1>
+        <hr>
+        <ul id="tasks">
+          <li>
+            <input type="button" class="done" onclick="markDone(this.parentNode)" value="&#x2713;" />
+            <input type="button" class="remove" onclick="remove(this.parentNode)" value="&#x2715;" />
+            make todo list
+          </li>
+        </ul>
+        <hr>
+        <input type="button" id="addButton" value="Add" onclick="addTask()" />
+        <input type="text" id="input" placeholder="enter task ..." />
+        <div id="divabout"></div>
+        <button onclick="doAbout()">About</button>
+        <input type="button" value="Clear About" onclick="clearAbout()" />
+      </div>      
+      <div class="grid-item" id="it4">
+        <h1>Canvas Color Changer</h1>
+        <canvas id="myCanvas" width="500" height="255"></canvas>
+        <br>
+        <input type="color" id="colorInput" value="#0000FF">
+        <input type="button" value="Change Color" onclick="changeBackgroundColor()">
+        <input type="range" id="slider" min="1" max="235" value="50" oninput="doSquare()">
+      </div>
+      <div class="grid-item" id="it5">
+         <h1>Paint Your Own Picture</h1>
+        <p>
+          Set Width: 
+          <input type="text" onchange="PaintApp.setWidth(this.value)">
+
+          Set Height: 
+          <input type="text" onchange="PaintApp.setHeight(this.value)">
+        </p>
+        <canvas id="canvasPaint" width="500" height="500" onmousedown="startPaint()" onmousemove="PaintApp.doPaint(event.offsetX, event.offsetY)" onmouseup="endPaint()"></canvas>
+        <p>
+          Brush Color: 
+          <input type="color" value="#000" onchange="PaintApp.changeColor(this.value)">
+          Brush Size: 
+          <input type="range" id="sizeInput" min="1" max="50" value="50" oninput="PaintApp.resizeBrush(this.value)">
+          <output id="sizeOutput">50</output>
+        </p>
+        <p>
+          <input type="button" id="clear" value="Clear Canvas" onclick="PaintApp.clearCanvas()">
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
