@@ -18,7 +18,7 @@
 	--Grayish-Blue: hsl(229, 8%, 60%);
 	--Very-Dark-Blue: hsl(229, 31%, 21%);
 	--box-shadow: .5rem .5rem 0 hsl(231, 69%, 60%);
-	--border: .4rem solid var(--Sofr-Blue);
+	--border: .4rem solid var(--Soft-Blue);
 }
 section {
 	padding: 1.3rem 7%;
