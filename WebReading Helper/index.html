@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
     <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
-
-
     <link rel="stylesheet" href="css/styles.css">
-
     <title>WebReading Helper</title>
 </head>
 
 <body>
-
 <!-- navbar sections starts  -->
 <header class="header">
     <nav class="navbar">
@@ -23,15 +19,14 @@
 </header>
 <!-- navbar sections ends  -->
 
-
 <!-- home section stars  -->
 <section class="home" id="home">
     <div class="content">
         <h1 class="font-effect-neon">WebReading Helper</h1>
         <p>Reading Helper is your go-to companion for a more organized, focused, and multilingual web reading
             experience. Make the most out of your online reading time with these essential features at your disposal.
-            Try Reading Helper today and revolutionize the way you explore the web.</p><a class="home-btn" href="#">get
-        it on chrome</a>
+            Try Reading Helper today and revolutionize the way you explore the web.</p>
+        <a class="home-btn" href="#">get it on browser</a>
     </div>
     <div class="image">
         <img alt="illustration-hero"
@@ -40,6 +35,10 @@
 </section>
 <!-- home section ends  -->
 
+<!-- "Десь на сторінці" starts  -->
+<button id="fetchButton">Get the date</button>
+<div id="result"></div>
+<!-- "Десь на сторінці" ends  -->
 
 <!-- features sectin starts  -->
 <section class="features" id="features">
@@ -106,6 +105,7 @@
         </div>
     </div>
 </section><!-- downloads section ends -->
+    
 <!-- footer section starts  -->
 <section class="footer" id="footer">
     <div class="box-container">
@@ -119,16 +119,18 @@
                 Ukraine - 12345</a>
         </div>
         <div class="box">
-            <h3>follow us</h3><a href="#"><i class="fab fa-facebook-f"></i>facebook</a> <a href="#"><i
-                class="fab fa-twitter"></i>facebook</a> <a href="#"><i class="fab fa-instagram"></i>instagram</a> <a
-                href="#"><i class="fab fa-linkedin"></i>linkedin</a> <a href="#"><i class="fab fa-pinterest"></i>pinterest</a>
+            <h3>follow us</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i>facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+            <a href="#"><i class="fab fa-pinterest"></i>pinterest</a>
         </div>
     </div>
     <div class="credit">
         Credits
     </div>
 </section><!-- footer section ends -->
-
 
 <!-- modal for login and registration starts -->
 <div id="loginModal" class="modal">
@@ -138,8 +140,8 @@
             <h2>Log in</h2>
             <input type="email" id="loginEmail" class="elementM" placeholder="Email">
             <input type="password" id="loginPassword" class="elementM" placeholder="Password">
-            <button id="loginButton"class="elementM" >Log in</button>
-            <p class="elementM" >No account? <span id="showRegister">Sign up</span></p>
+            <button id="loginButton" class="elementM">Log in</button>
+            <p class="elementM">No account? <span id="showRegister">Sign up</span></p>
         </div>
         <div id="registerForm">
             <h2>Sign up</h2>
@@ -147,7 +149,7 @@
             <input type="password" id="registerPassword" class="elementM" placeholder="Password">
             <input type="password" id="repeatPassword" class="elementM" placeholder="Repeat Password">
             <label for="terms" id="checkbox-label" class="elementM">
-                <p id="term"><input type="checkbox" id="terms"> I agree to the terms of use</p>
+                <p id="term"><input type="checkbox" id="terms"><a href="https://httpbin.org/image/webp">I agree to the terms of use</a> </p>
             </label>
             <button id="registerButton" class="elementM">Sign up</button>
         </div>
