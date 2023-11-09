@@ -116,4 +116,79 @@ function register() {
         alert("Sign up successful");
         closeModalHandler();
     }
+
 }
+
+
+// Верхня кнопка Get It On Browser має визначати, з якого браузера переглядають сайт і пропонувати відповідне завантаження
+
+// Function to detect the user's browser
+function detectBrowser() {
+    var userAgent = navigator.userAgent;
+    if (userAgent.includes("Chrome")) {
+        return "Chrome";
+    } else if (userAgent.includes("Firefox")) {
+        return "Firefox";
+    } else if (userAgent.includes("Safari")) {
+        return "Safari";
+    } else {
+        return "other browser";
+    }
+}
+
+function getBrowserExtension() {
+    var userBrowser = detectBrowser();
+    var downloadLink;
+
+    // Add links for downloading the corresponding extension based on the user's browser
+    // Delete alerts, used for testing purposes
+    if (userBrowser === "Chrome") {
+        alert("Link to Chrome extension");
+        downloadLink = "https://httpbin.org/image/png";
+    } else if (userBrowser === "Firefox") {
+        alert("Link to Firefox extension");
+        downloadLink = "https://httpbin.org/image/jpeg";
+    } else if (userBrowser === "Safari") {
+        alert("Link to Safari extension");
+        downloadLink = "Link to Safari extension";
+    } else {
+        alert("Link to the general download option");
+        downloadLink = "Link to the general download option";
+    }
+
+    // Redirect the user to the page for downloading the respective extension
+    window.location.href = downloadLink;
+}
+
+var getItOnBrowserButton = document.querySelector('.home-btn');
+getItOnBrowserButton.addEventListener('click', getBrowserExtension);
+
+
+//Використати HTTPBin (https://httpbin.org/#/) у якості заглушки бекенду.
+// Програма мінімум: звернутися до (Response Formats -> JSON) /json, відобразити отримані дані десь на сторінці.
+
+// Функція для виконання AJAX-запиту до HTTPBin та обробки відповіді
+function fetchData() {
+    // Отримати посилання для запиту до /json на HTTPBin
+    const url = 'https://httpbin.org/json';
+
+    // Виконати AJAX-запит за допомогою Fetch API
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Помилка при отриманні даних з сервера.');
+            }
+            return response.json();
+        })
+        .then(json => displayData(json))
+        .catch(error => console.error(error));
+}
+// Функція для відображення отриманих даних на сторінці
+function displayData(data) {
+    const resultDiv = document.getElementById('result');
+    const jsonString = JSON.stringify(data, null, 2);
+    resultDiv.innerHTML = `<pre>${jsonString}</pre>`;}
+
+// Отримати посилання на кнопку та додати обробник події для натискання
+const fetchButton = document.getElementById('fetchButton');
+fetchButton.addEventListener('click', fetchData);
