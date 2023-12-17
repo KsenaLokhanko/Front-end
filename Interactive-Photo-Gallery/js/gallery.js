@@ -11,7 +11,7 @@ function unDo() {
 function addTabindex() {
     var images = document.getElementsByClassName('preview');
     for (var i = 0; i < images.length; i++) {
-        images[i].tabIndex = i + 1; // Assigning tabindex dynamically
+        images[i].tabIndex = i + 1;
     }
 }
 
