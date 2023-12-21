@@ -63,12 +63,13 @@ function doSquare() {
 }
 
 //Paint Your Own Picture
-const PaintApp = {
   canvas: document.getElementById("canvasPaint"),
   context: null,
   color: 'black',
   radius: 50,
   isPainting: false,
+const PaintApp = {
+
 
   setWidth(value) {
     if (this.isNumeric(value)) {
@@ -122,7 +123,6 @@ const PaintApp = {
 
   init() {
     this.context = this.canvas.getContext("2d");
-    // Add event listeners or any other setup code here
   }
 };
 
