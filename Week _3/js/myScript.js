@@ -41,17 +41,17 @@ function changeCanvaColG() {
 } 
 
 //Canvas Color Changer
+const canvas = document.getElementById("myCanvas");
+const colorInput = document.getElementById("colorInput");
+const ctx = canvas.getContext("2d");
+const slider = document.getElementById("slider");
+canvas.style.backgroundColor = colorInput.value;
+
 function changeBackgroundColor() {
-  const canvas = document.getElementById("myCanvas");
-  const colorInput = document.getElementById("colorInput");
-  canvas.style.backgroundColor = colorInput.value;
+    canvas.style.backgroundColor = colorInput.value;
 }
 
 function doSquare() {
-    const canvas = document.getElementById("myCanvas");
-    const colorInput = document.getElementById("colorInput");
-    const ctx = canvas.getContext("2d");
-    const slider = document.getElementById("slider");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const squareSize = parseInt(slider.value);
     ctx.fillStyle = colorInput.value;
@@ -63,70 +63,61 @@ function doSquare() {
 }
 
 //Paint Your Own Picture
-  canvas: document.getElementById("canvasPaint"),
-  context: null,
-  color: 'black',
-  radius: 50,
-  isPainting: false,
-const PaintApp = {
+var paintcanvas = document.getElementById("canvasPaint");
+var context = paintcanvas.getContext("2d");
+var color = 'black';
+var radius = 50;
+var isPainting = false;
 
-
-  setWidth(value) {
-    if (this.isNumeric(value)) {
-      this.canvas.width = parseInt(value);
-    }
-  },
-
-  setHeight(value) {
-    if (this.isNumeric(value)) {
-      this.canvas.height = parseInt(value);
-    }
-  },
-
-  clearCanvas() {
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  },
-
-  paintCircle(x, y) {
-    this.context.beginPath();
-    this.context.arc(x, y, this.radius, 0, Math.PI * 2, true);
-    this.context.fillStyle = this.color;
-    this.context.fill();
-  },
-
-  isNumeric(value) {
-    return !isNaN(value);
-  },
-
-  startPaint() {
-    this.isPainting = true;
-  },
-
-  endPaint() {
-    this.isPainting = false;
-  },
-
-  doPaint(x, y) {
-    if (this.isPainting) {
-      this.paintCircle(x, y);
-    }
-  },
-
-  changeColor(newColor) {
-    this.color = newColor;
-  },
-
-  resizeBrush(newSize) {
-    this.radius = newSize;
-    document.getElementById("sizeOutput").value = newSize;
-  },
-
-  init() {
-    this.context = this.canvas.getContext("2d");
+function setWidth(value) {
+  if (isNumeric(value)) {
+    paintcanvas.width = parseInt(value);
   }
-};
+}
 
-PaintApp.init(); // Initialize the PaintApp object
+function setHeight(value) {
+  if (isNumeric(value)) {
+    paintcanvas.height = parseInt(value);
+  }
+}
+
+function clearCanvas() {
+  context.clearRect(0, 0, paintcanvas.width, paintcanvas.height);
+}
+
+function paintCircle(x, y) {
+  context.beginPath();
+  context.arc(x, y, radius, 0, Math.PI * 2, true);
+  context.fillStyle = color;
+  context.fill();
+}
+
+function isNumeric(value) {
+  return !isNaN(value);
+}
+
+function startPaint() {
+  isPainting = true;
+}
+
+function endPaint() {
+  isPainting = false;
+}
+
+function doPaint(x, y) {
+  if (isPainting) {
+    paintCircle(x, y);
+  }
+}
+
+function changeColor(newColor) {
+  color = newColor;
+}
+
+function resizeBrush(newSize) {
+  radius = newSize;
+  document.getElementById("sizeOutput").value = newSize;
+}
 
 //TODO list
 function addTask() {
