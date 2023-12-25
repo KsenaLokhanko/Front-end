@@ -350,10 +350,10 @@ body {
 }
 
 .register {
+    width: 85%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding:0 20px ;
 }
 
 .register-left {
@@ -725,7 +725,9 @@ body {
     }
 
     .register {
+        width: 100%;
         flex-direction: column;
+        padding:0 20px ;        
     }
 
     .register-left {
