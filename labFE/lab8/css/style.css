@@ -19,7 +19,6 @@ body {
     text-decoration: none;
 }
 
-
 .logo img {
     width: 163px;
 }
@@ -741,8 +740,7 @@ body {
     .date .year {
         padding: 15px 5px;
         margin-top:10px;
-        display: flex;
-        justify-content: space-between;
+        max-width: 23%;
     }
 
     .year h1 {
