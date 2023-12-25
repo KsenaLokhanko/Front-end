@@ -642,22 +642,12 @@ body {
 
 }
 
-/* Desktop styles (default) */
-body {
-    font-family: 'Rubik', sans-serif;
-}
-
-/* Tablet styles */
 @media (max-width: 768px) {
     .navbar {
         width: 90%;
     }
 
-    .nav-links {
-        display: none;
-    }
-
-    .nav-links ul {
+   .nav-links ul {
         flex-direction: column;
         align-items: center;
         position: absolute;
@@ -735,6 +725,11 @@ body {
         padding: 40px 20px;
     }
 
+    courses-section{
+        flex-direction: column; 
+        align-items: center;
+    }
+    
     .design-text {
         padding: 20px;
     }
