@@ -63,11 +63,12 @@ body {
 
 .introsection {
     background-image: linear-gradient(rgba(193, 193, 189, 0.3), rgba(0, 0, 0, 0.8)),
-                      url('https://raw.githubusercontent.com/KsenaLokhanko/Front-end/c243ebd2b26e5891157275be5850f26344310551/labFE/lab8/img/home-banner.jpg');
+    url('/img/home-banner.jpg');
     background-size: cover;
     width: 100%;
     height: 100vh;
     margin-top: -70px;
+
 }
 
 .intro-text {
@@ -223,6 +224,7 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .design {
@@ -403,8 +405,6 @@ body {
 .contact {
     padding: 40px;
     background-color: #fff;
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .contact form input {
@@ -530,16 +530,13 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 40px 0 0;
-}
-
-.ev-card {
-    width: 49%;
+    flex-wrap: wrap;
 }
 
 .ev-card {
     position: relative;
     overflow: hidden;
-    width: 555px;
+    width: 49%;
     height: 400px;
 }
 
@@ -644,152 +641,17 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        width: 90%;
-    }
-
-   .nav-links ul {
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0px 10px 30px rgb(0 35 71 / 10%);
-    }
-
-    .nav-links ul.active {
-        display: flex;
-    }
-
-    .nav-links ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links ul li a {
-        display: block;
-        padding: 15px;
-    }
-
-    .nav-links ul li:nth-of-type(6) a {
-        margin-left: 0;
-    }
-
-    .intro-text {
-        padding: 80px 20px;
-        text-align: center;
-    }
-
-    .intro-text p {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    .intro-text h1 {
-        font-size: 36px;
-        margin-bottom: 24px;
-    }
-
-    .intro-btn {
-        flex-direction: column;
-    }
-
-    .intro-btn a {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .feature-cards {
-        width: 100%;
-    }
-
-    .card {
-        width: 100%;
-        margin-bottom: 10%;
-    }
-
-    .design-cards {
-        width: 100%;
-    }
-
-    .design {
-        width: 100%;
-    }
-
-    .design-img img {
-        transform: scale(1);
-    }
-
-    .courses-text {
-        padding: 40px 20px;
-    }
-
-    courses-section{
-        flex-direction: column; 
-        align-items: center;
-    }
-    
-    .design-text {
-        padding: 20px;
-    }
-
-    .design-text button {
-        margin-bottom: 12px;
-    }
-
-    .design-text > a {
-        font-size: 18px;
-        padding-bottom: 10px;
-    }
-
-    .about-img img {
-        width: 30%;
-    }
-
-    .expert-section {
-        padding: 80px 20px;
-    }
-
-    .our-expert {
-        flex-wrap: wrap;
-    }
-
-    .expert {
-        width: 48%;
-        margin-bottom: 20px;
-    }
-
-    .register-section {
-        padding: 80px 20px;
-    }
-
-    .register {
-        flex-direction: column;
-    }
-
-    .register-left {
-        flex-basis: 100%;
-        margin-bottom: 30px;
-    }
-
-    .register-right {
-        margin-left: 0;
-    }
-
-    .contact form button {
-        margin-top: 20px;
-    }
-}
-
-/* Mobile styles */
-@media (max-width: 480px) {
-    .navbar {
-        width: 100%;
+        width: 80%;
     }
 
     .nav-links ul {
         top: 60px;
+        gap: 20px;
+    }
+
+    .nav-links #search {
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 75%;
     }
 
     .intro-text {
@@ -825,7 +687,8 @@ body {
     }
 
     .design {
-        width: 100%;
+        width: calc(100% - 40px);
+        margin: 0 auto 20px;
     }
 
     .design-text {
@@ -876,11 +739,20 @@ body {
     }
 
     .date .year {
-        padding: 25px 20px;
-        margin: 45px 10px 0 0;
+        padding: 15px 5px;
+        margin: 0px 10px 0 0;
+    }
+
+    .year h1 {
+        font-size: 23px;
     }
 
     .contact form button {
         margin-top: 15px;
+    }
+
+    .ev-card {
+        width: 90%;
+        margin-bottom: 20px;
     }
 }
